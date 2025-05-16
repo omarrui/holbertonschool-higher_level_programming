@@ -2,16 +2,20 @@
 """
 add_integer.py
 
-this module add 2 numbers
+this module adds 2 numbers
 """
 
 
 def add_integer(a, b=98):
     """
-    that adds 2 integer, transform float in to integer and handle wrong type
+    Adds two integers or floats (cast to int).
+
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(100, -2)
+    98
+    >>> add_integer(2)
+    100
+    >>> add_integer(100.3, -2)
+    98
     """
-    if not isinstance(a, (int, float)):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
-        raise TypeError("b must be an integer")
-    return int(a) + int(b)
