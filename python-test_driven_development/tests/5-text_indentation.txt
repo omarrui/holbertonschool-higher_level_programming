@@ -1,0 +1,52 @@
+"""
+This module tests the text_indentation function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Normal case with punctuation
+>>> text_indentation("Hi. I am: Omar? Yes.")
+Hi.
+<BLANKLINE>
+I am:
+<BLANKLINE>
+Omar?
+<BLANKLINE>
+Yes.
+<BLANKLINE>
+
+# Case with extra spaces after punctuation
+>>> text_indentation("Hello:  how are you?  Fine.")
+Hello:
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+Fine.
+<BLANKLINE>
+
+# Case with no punctuation
+>>> text_indentation("Hello world")
+Hello world
+
+# Single character input
+>>> text_indentation('a')
+a
+
+# Empty string
+>>> text_indentation("")
+<BLANKLINE>
+
+# Incorrect type: integer
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# Incorrect type: None
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+# Missing argument
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+"""
