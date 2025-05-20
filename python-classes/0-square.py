@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-"""represent a square """
+"""
+0-square
+
+creating an empty square
+"""
 
 
 class Square:
-    """ represent a square"""
+    """the square Class creates a new square object"""
     pass
