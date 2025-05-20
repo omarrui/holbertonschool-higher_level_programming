@@ -15,6 +15,7 @@ class Square:
         """
         creating an instance of object withthese parameters
         """
+        self.size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size > 0:
