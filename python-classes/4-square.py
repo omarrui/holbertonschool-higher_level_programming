@@ -8,7 +8,7 @@ That create class square to handle object
 
 class Square:
     """
-    Class Square create square object
+    Class Square that creates square object
     """
     def __init__(self, size=0):
         """

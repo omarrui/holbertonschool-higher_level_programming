@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-3-square
+4-square
 
-That create class square to handle object
+creates class square to handle objects
 """
 
 
 class Square:
     """
-    Class Square create square object
+    Class Square creates square objects
     """
     def __init__(self, size=0):
         """
-        create an instance of object with these parameter
+        creates an instance of object with these parameter
         """
         self.__size = size
         if not isinstance(size, int):
@@ -22,6 +22,6 @@ class Square:
 
     def area(self):
         """
-        That returns the current square area
+        returns the current square area
         """
         return self.__size ** 2
