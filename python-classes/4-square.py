@@ -1,27 +1,41 @@
 #!/usr/bin/python3
 """
-Square 3
+4-square
 
-defining the square
+That create class square to handle object
 """
 
 
 class Square:
     """
-    the square Class creates square objects
+    Class Square create square object
     """
     def __init__(self, size=0):
         """
-        create an instance of object with these parameters
+        create an instance of object with these parameter
         """
-        self.size = size
-        if not isinstance(size, int):
+        self.__size = size
+
+    @property
+    def size(self):
+        """
+        Return private attribut to access it indirectly
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Change the value of private attribut indirectly
+        """
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
         """
-        returns the square area
+        That returns the current square area
         """
         return self.__size ** 2
