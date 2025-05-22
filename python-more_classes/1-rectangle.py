@@ -6,7 +6,7 @@ creates a class that defines reclangles
 """
 
 
-class rectangle:
+class Rectangle:
     """
     a recangle class that defines a rectangle
     """
