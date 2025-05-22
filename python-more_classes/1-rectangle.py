@@ -6,7 +6,7 @@ creates a class that defines reclangles
 """
 
 
-class recatngle:
+class rectangle:
     """
     a recangle class that defines a rectangle
     """
@@ -26,6 +26,7 @@ class recatngle:
         """
         retrives the height
         """
+        return self.__height
 
     @width.setter
     def width(self, value):
@@ -36,7 +37,7 @@ class recatngle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.width = value
+        self.__width = value
 
     @height.setter
     def height(self, value):
@@ -47,4 +48,4 @@ class recatngle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.height = value
+        self.__height = value
