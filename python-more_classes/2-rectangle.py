@@ -56,7 +56,7 @@ class Rectangle:
         """
         return (self.height * self.width)
 
-    def primiter(self):
+    def perimeter(self):
         """
         return the primiter
         """
