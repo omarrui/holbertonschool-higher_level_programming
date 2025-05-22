@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-6 square
+6-square
 
-creates square class that handles objects
+That create class square to handle object
 """
 
 
-class square:
+class Square:
     """
-    square class to create objects
+    Class Square create square object
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -20,44 +20,48 @@ class square:
     @property
     def size(self):
         """
-        retruns priv ti acces it indirectly
+        Return private attribut to access it indirectly
         """
-        return self.size
+        return self.__size
 
     @size.setter
     def size(self, value):
+        """
+        Change the value of private attribut indirectly
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self.size = value
+        self.__size = value
 
     @property
     def position(self):
         """
-        returns a priv attribute to acces it indirectly
+        Return private attribut to access it indirectly
         """
         return self.__position
 
     @position.setter
     def position(self, value):
         """
-        change value of a priv attribute indirectly
+        Change the value of private attribut indirectly
         """
-
         if (not isinstance(value, tuple) or
             len(value) != 2 or
                 not all(isinstance(num, int) and num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.position = value
+        self.__position = value
 
     def area(self):
         """
         That returns the current square area
         """
-    def print(self):
+        return self.size ** 2
+
+    def my_print(self):
         """
-        prints the squaresith # ymbol and adds space to position
+        That print square with '#' symbol and add space to position
         """
         if self.size == 0:
             print()
