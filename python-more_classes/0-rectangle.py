@@ -10,4 +10,4 @@ class rectangle:
     class rectangle defines a rectangle
     """
     def __init__(self):
-        pass
+        self
