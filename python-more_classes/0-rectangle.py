@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-rectangle 0
+0-rectangle
 
-
+That create a class that defines a rectangle
 """
 
 
-class rectangle:
+class Rectangle:
     """
-    class rectangle defines a rectangle
+    class rectangle to defines a rectangle
     """
     def __init__(self):
         self
