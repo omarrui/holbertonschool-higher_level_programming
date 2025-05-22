@@ -20,7 +20,7 @@ class Rectangle:
         returns the attribut
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
