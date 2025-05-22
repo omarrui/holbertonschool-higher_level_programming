@@ -5,6 +5,7 @@ rectangle 0
 
 """
 
+
 class rectangle:
     """
     class rectangle defines a rectangle
