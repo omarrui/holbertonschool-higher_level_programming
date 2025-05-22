@@ -26,11 +26,11 @@ class recatngle:
         """
         retrives the height
         """
-    
+
     @width.setter
-    def width(self,value):
+    def width(self, value):
         """
-        
+        retrives width
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -43,7 +43,7 @@ class recatngle:
         """
         retrives the height
         """
-        if not isinstance (value,int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
