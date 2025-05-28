@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 """
-Empty class BaseGeometry
+base_geometry
+
+this file contains the class BaseGeometry
 """
 
+
 class BaseGeometry:
-    """BaseGeometry class"""
+    """
+    empty class BaseGeometry
+    """
     pass

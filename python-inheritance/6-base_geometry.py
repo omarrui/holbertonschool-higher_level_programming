@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 """
-BaseGeometry class with an area method
+base_geometry
+
+this file contains the class BaseGeometry
 """
 
+
 class BaseGeometry:
-    """Class with area method that is not implemented yet"""
+    """
+    class BaseGeometry with area method
+    """
+    pass
+
     def area(self):
         raise Exception("area() is not implemented")
