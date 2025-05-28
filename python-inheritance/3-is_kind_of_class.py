@@ -8,8 +8,8 @@ inherited from, the specified class
 """
 
 
-def is_kind_of_class(obj, a_class): 
+def is_kind_of_class(obj, a_class):
     """
     return true or False if obj isinstance  of a_class
     """
-    return  isinstance(obj, a_class)
+    return isinstance(obj, a_class)
