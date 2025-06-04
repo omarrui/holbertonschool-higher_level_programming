@@ -1,6 +1,6 @@
 #!/bin/bash/python3
 """
-3tojson string
+to_json_string
 
 to json string
 """
