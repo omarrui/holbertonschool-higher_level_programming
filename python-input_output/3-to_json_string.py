@@ -1,5 +1,11 @@
 #!/bin/bash/python3
+"""
+3tojson string
+
+to json string
+"""
 import json
+
 
 def to_json_string(my_obj):
     """ returns the json representation of a string"""
