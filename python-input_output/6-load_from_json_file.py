@@ -12,6 +12,7 @@ import json
 
 def load_from_json_file(filename):
     """
-    anfunction that creates an object from a json file"""
-    with open(filename, 'r') as f:
-        return json.load(filename)
+    anfunction that creates an object from
+      a json file"""
+    with open(filename, "r") as file:
+        return json.load(file)
