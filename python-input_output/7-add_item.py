@@ -15,7 +15,7 @@ try:
 except Exception as e:
     my_list = []
 
-    if len(sys.argv) > 1:
-        my_list.extend(sys.argv[1:])
+if len(sys.argv) > 1:
+    my_list.extend(sys.argv[1:])
 
 save_to_json_file(my_list, "add_item.json")
