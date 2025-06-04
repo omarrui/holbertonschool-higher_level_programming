@@ -1,9 +1,8 @@
-#!/usr/bin/bash/python3
+#!/usr/bin/python3
 """
 load_from_json_file
 
-
-this module contains a
+this module contains
 load_from_json_file function
 """
 import json
@@ -11,7 +10,8 @@ import json
 
 def load_from_json_file(filename):
     """
-    anfunction that creates an object from
-      a json file"""
+    this function return an object
+    from a JSON file
+    """
     with open(filename, "r") as file:
         return json.load(file)
