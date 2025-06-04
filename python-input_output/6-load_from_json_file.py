@@ -1,12 +1,11 @@
 #!/usr/bin/bash/python3
 """
-6 load from json file
+load_from_json_file
 
 
-write a function htat creates an object
+this module contains a
+load_from_json_file function
 """
-
-
 import json
 
 
