@@ -1,14 +1,16 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 """
 to_json_string
 
-to json string
+this module contains the to_json_string
+function
 """
 import json
 
 
 def to_json_string(my_obj):
     """
-    returns the json representation of a string
+    this function returns the JSON
+    representation of an object(string)
     """
     return json.dumps(my_obj)
