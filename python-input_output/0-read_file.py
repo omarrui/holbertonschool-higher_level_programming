@@ -2,11 +2,15 @@
 """
 read_file
 
-This module contains a function that reads and prints a file's content.
+this module contains...
 """
 
 
-def read_file(filename=""):
-    """Reads a text file and prints its contents to stdout"""
-    with open(filename, "r", encoding="utf-8") as f:
-        print(f.read(), end="")
+def read_file(filename="", endcoding="utf-8"):
+    """
+    this function open file and print
+    it content
+    """
+    with open(filename, "r", encoding="utf-8") as file:
+        content = file.read()
+        print(content, end="")
