@@ -19,8 +19,8 @@ def convert_csv_to_json(filename):
             data = []
             for row in csv_reader:
                 data.append(dict(row))
-        with open("fata.json", "w") as json:
-            json.dump(data, json, indent=4)
+        with open("data.json", "w") as file:
+            json.dump(data, file, indent=4)
         return True
     except FileNotFoundError:
         return False
