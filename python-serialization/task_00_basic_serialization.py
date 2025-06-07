@@ -8,19 +8,21 @@ to serialize and deserialize
 import json
 
 
-def serialize_nd_save_to_file(data, filename):
+def serialize_and_save_to_file(data, filename):
     """
-    Serialize data to a JSON file.
+    this function serialize and save
+    data to the specified file
     """
-    with open(filename, 'w') as file:
+    with open(filename, "w") as file:
         json.dump(data, file)
     pass
 
 
-def load_from_file_and_deserialize(filename):
+def load_and_deserialize(filename):
     """
-    Load data from a JSON file and deserialize it.
+    this function load and deserialize
+    data from the specified file
     """
-    with open(filename, 'r') as file:
-        data = json.load(file)
+    with open(filename, "r") as file:
+        return json.load(file)
     pass
