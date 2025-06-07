@@ -7,12 +7,12 @@ this module has 2 functions
 import pickle
 
 
-class Custoom0bject:
+class Custom0bject:
     """
     this class contains the display
     serialize and deserialize methods
     """
-    def __innit__(self, name, age, is_student):
+    def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
         self.is_student = is_student
@@ -37,5 +37,5 @@ class Custoom0bject:
         try:
             with open(filename, "rb")as f:
                 return pickle.load(f)
-        except exception:
+        except Exception:
             return None
