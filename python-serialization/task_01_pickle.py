@@ -7,7 +7,7 @@ this module has 2 functions
 import pickle
 
 
-class Custom0bject:
+class CustomObject:
     """
     this class contains the display
     serialize and deserialize methods
