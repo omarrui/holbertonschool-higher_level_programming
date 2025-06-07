@@ -21,5 +21,5 @@ def convert_csv_to_json(filename):
         with open("fata.json", "w") as json_file:
             json.dump(data, json_file, indent=4)
         return True
-    except fileNotFoundError:
+    except FileNotFoundError:
         return False
