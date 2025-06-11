@@ -6,7 +6,7 @@ This script demonstrates how to make HTTP
 requests using the `requests` library.
 """
 import requests
-import _json
+import csv
 
 
 def fetch_and_print_posts():
@@ -26,7 +26,7 @@ def fetch_and_save_posts():
     writes in csvfile content
     of the posts
     """
-    f = requests.get('ttps://jsonplaceholder.typicode.com/posts')
+    f = requests.get('https://jsonplaceholder.typicode.com/posts')
     if f.status_code == 200:
         API_data = f.json()
         posts = [{"id": key["id"], "title": key["title"], "body": key["body"]}
