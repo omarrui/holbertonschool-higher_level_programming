@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Task 02: Requests
+task_02_requests
 
-This script demonstrates how to make HTTP
-requests using the `requests` library.
+this module contains 2 functions
+to fetch a posts
 """
 import requests
 import csv
@@ -11,7 +11,7 @@ import csv
 
 def fetch_and_print_posts():
     """
-    a method that peints the posts
+    this method print the posts
     """
     f = requests.get('https://jsonplaceholder.typicode.com/posts')
     print("the status code of the response is {}".format(f.status_code))
@@ -23,8 +23,8 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """
-    writes in csvfile content
-    of the posts
+    this method write in to
+    csv file the contente of the posts
     """
     f = requests.get('https://jsonplaceholder.typicode.com/posts')
     if f.status_code == 200:
