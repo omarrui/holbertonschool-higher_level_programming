@@ -14,7 +14,7 @@ def fetch_and_print_posts():
     this method print the posts
     """
     f = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print("status cod: {}".format(f.status_code))
+    print("Status Code: {}".format(f.status_code))
     if f.status_code == 200:
         API_data = f.json()
         for key in API_data:
