@@ -12,8 +12,8 @@ import json
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
     """
-    this class sends a response for
-    special path
+    this class send a response
+    for special path
     """
     def do_GET(self):
         if self.path == "/":
@@ -36,6 +36,11 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
                     "description": "A simple API built with http.server"}
             json_str = json.dumps(data)
             self.wfile.write(json_str.encode())
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"OK")
         else:
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
@@ -43,7 +48,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Endpoint not found")
 
 
-PORT = 8080
+PORT = 8000
 Handler = MyHandler
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
