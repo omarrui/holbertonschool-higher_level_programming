@@ -1,3 +1,3 @@
 -- delete scores below five
 DELETE from second_table
-where score <= 5;
+WHERE score <= 5;
