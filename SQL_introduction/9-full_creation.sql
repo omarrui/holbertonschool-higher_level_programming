@@ -5,7 +5,7 @@ create table if not exists second_table(
     name VARCHAR(256),
     score INT
 );
-INSERT into second_table(is, name, score) 
+INSERT into second_table(id, name, score) 
 VALUES
 (1, 'John', 10),
 (2, 'Alex', 3),
