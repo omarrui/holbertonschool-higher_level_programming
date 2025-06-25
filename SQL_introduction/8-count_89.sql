@@ -1,3 +1,3 @@
 -- displays the number of records with
 -- id = 89 in the table first_table
-select count (id) from first_table where if = 89;
+select count(id) from first_table where id = 89;
