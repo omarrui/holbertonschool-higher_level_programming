@@ -2,4 +2,4 @@
 --decending order
 SELECT score, name
 FROM second_table
-ORDER by score desc;
+ORDER by score DESC;
