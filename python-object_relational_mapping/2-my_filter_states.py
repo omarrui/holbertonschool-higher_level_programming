@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-import MySQLdb
+"""
+Module that lists all states from the database hbtn_0e_0_usa
+"""
 import sys
-"""
-1-filter_states
-lists all states from the
-database hbtn_0e_0_usa
-where name starts with 'n'
-and is ordered by id (ascending)
-"""
+import MySQLdb
 
 
 if __name__ == "__main__":
-    # Connect to the database
     db = MySQLdb.connect(
         user=sys.argv[1],
         passwd=sys.argv[2],
@@ -19,15 +14,9 @@ if __name__ == "__main__":
         port=3306
     )
     cursor = db.cursor()
-
-    # Use parameterized query to prevent SQL injection
-    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
-    cursor.execute(query, (sys.argv[4],))
-
-    # Fetch and print results
+    cursor.execute("SELECT * \
+    FROM states \
+    WHERE CONVERT(`name` USING Latin1) \
+    COLLATE Latin1_General_CS = '{}';".format(sys.argv[4]))
     for state in cursor.fetchall():
         print(state)
-
-    # Close the cursor and database connection
-    cursor.close()
-    db.close()
