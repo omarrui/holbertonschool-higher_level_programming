@@ -11,19 +11,23 @@ and is ordered by id (ascending)
 
 
 if __name__ == "__main__":
-	db_connection = MySQLdb.connect(
-		host="localhost",
-		port=3306,
-		user=sys.argv[1],
-		passwd=sys.argv[2],
-		db=sys.argv[3]
-	)
-	name_search = sys.argv[4]
-	cursor = db_connection.cursor()
-	query = ("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(name_search))
-	cursor.execute(query)
-	rows = cursor.fetchall()
-	for row in rows:
-		print(row)
-	cursor.close()
-	db_connection.close
+    # Connect to the database
+    db = MySQLdb.connect(
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
+    cursor = db.cursor()
+
+    # Use parameterized query to prevent SQL injection
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
+    cursor.execute(query, (sys.argv[4],))
+
+    # Fetch and print results
+    for state in cursor.fetchall():
+        print(state)
+
+    # Close the cursor and database connection
+    cursor.close()
+    db.close()
