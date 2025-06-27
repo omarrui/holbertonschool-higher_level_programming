@@ -7,25 +7,23 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    try:
-        # Connect to the database
-        db = MySQLdb.connect(
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            port=3306
-        )
-        cursor = db.cursor()
+    # Connect to the database
+    db = MySQLdb.connect(
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
+    cursor = db.cursor()
 
-        # Execute the query to fetch states starting with 'N'
-        cursor.execute("SELECT * FROM states WHERE TRIM(name) LIKE 'N%' ORDER BY id ASC")
-        for state in cursor.fetchall():
-            print(state)
+    # Execute the query to fetch states starting with 'N'
+    cursor.execute("SELECT * FROM states WHERE TRIM(name) LIKE 'N%' ORDER BY id ASC")
+    rows = cursor.fetchall()
 
-    except Exception as e:
-        print(f"Error: {e}")
+    # Print each state
+    for row in rows:
+        print(row)
 
-    finally:
-        # Close the cursor and database connection
-        cursor.close()
-        db.close()
+    # Close the cursor and database connection
+    cursor.close()
+    db.close()
