@@ -1,101 +1,48 @@
-Test for 5-text_indentation module
-===================================
+#!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
+import unittest
+max_integer = __import__('6-max_integer').max_integer
 
-This module defines a text-formatting function ``text_indentation(text)``.
+class TestMaxInteger(unittest.TestCase):
+    def test_empty_list(self):
+        self.assertIsNone(max_integer([]))
 
-Usage
------
+    def test_one_element(self):
+        self.assertEqual(max_integer([5]), 5)
 
-``text_indentation()`` prints text with 2 new lines after each '.', '?', and ':'.
+    def test_positive_integers(self):
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
-    >>> text_indentation = __import__('5-text_indentation').text_indentation
-    >>> text_indentation("Hello?")
-    Hello?
-    <BLANKLINE>
+    def test_negative_integers(self):
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
 
-    >>> text_indentation("Hello.World")
-    Hello.
-    <BLANKLINE>
-    World
+    def test_mixed_integers(self):
+        self.assertEqual(max_integer([-10, 0, 10, 5]), 10)
 
-    >>> text_indentation("Hello:World?How are you.")
-    Hello:
-    <BLANKLINE>
-    World?
-    <BLANKLINE>
-    How are you.
-    <BLANKLINE>
+    def test_duplicates(self):
+        self.assertEqual(max_integer([1, 3, 3, 2]), 3)
 
-No spaces at beginning or end of lines:
+    def test_max_at_beginning(self):
+        self.assertEqual(max_integer([9, 1, 2, 3]), 9)
 
-    >>> text_indentation("   Hi there.")
-    Hi there.
-    <BLANKLINE>
+    def test_max_at_end(self):
+        self.assertEqual(max_integer([1, 2, 3, 9]), 9)
 
-    >>> text_indentation("Let's print a long text with some special characters:     and this can be annoying but it should work with any type of characters?")
-    Let's print a long text with some special characters:
-    <BLANKLINE>
-    and this can be annoying but it should work with any type of characters?
-    <BLANKLINE>
+    def test_floats(self):
+        self.assertEqual(max_integer([1.5, 2.7, 0.3]), 2.7)
 
-Empty string:
+    def test_ints_and_floats(self):
+        self.assertEqual(max_integer([1, 2.5, 3, 2]), 3)
 
-    >>> text_indentation("")
+    def test_one_float(self):
+        self.assertEqual(max_integer([2.5]), 2.5)
 
-Invalid Text
-------------
+    def test_sorted_list(self):
+        self.assertEqual(max_integer([1, 2, 3, 4, 5]), 5)
 
-The parameter ``text`` must be a string:
+    def test_reverse_sorted_list(self):
+        self.assertEqual(max_integer([5, 4, 3, 2, 1]), 5)
 
-    >>> text_indentation(7)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-    >>> text_indentation(None)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-Missing Arguments
------------------
-
-One argument is required:
-
-    >>> text_indentation()
-    Traceback (most recent call last):
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-Test for 6-max_integer module
-=============================
-
-This module defines a function ``max_integer(list)``.
-
-Usage
------
-
-``max_integer()`` returns the maximum integer in a list.
-
-    >>> max_integer = __import__('6-max_integer').max_integer
-    >>> max_integer([1, 2, 3, 4])
-    4
-
-    >>> max_integer([1, 3, 4, 2])
-    4
-
-Empty list:
-
-    >>> max_integer([])
-
-Single element:
-
-    >>> max_integer([1])
-    1
-
-Negative numbers:
-
-    >>> max_integer([-1, -2, -3])
-    -1
-
-Mixed positive and negative:
-
-    >>> max_integer([-1, 2, -3, 4])
-    4
+if __name__ == '__main__':
+    unittest.main()
