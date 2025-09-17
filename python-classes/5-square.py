@@ -3,7 +3,7 @@
 
 
 class Square:
-    """A square class with private size attribute, getter/setter, area calculation, and printing."""
+    """A square class with size, getter/setter, area, and printing."""
 
     def __init__(self, size=0):
         """Initialize a square with given size.
