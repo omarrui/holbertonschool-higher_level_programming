@@ -6,10 +6,10 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Rectangle class inheriting from BaseGeometry"""
-    
+
     def __init__(self, width, height):
         """Initialize Rectangle with validated width and height
-        
+
         Args:
             width (int): Width of rectangle (must be positive integer)
             height (int): Height of rectangle (must be positive integer)
