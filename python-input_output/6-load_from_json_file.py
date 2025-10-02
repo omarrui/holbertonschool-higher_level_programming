@@ -8,7 +8,7 @@ def load_from_json_file(filename):
 
     Args:
         filename: Name of the JSON file to read from
-    
+
     Returns:
         Python object from the JSON file
     """

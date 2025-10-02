@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "../../python-classes"
+		},
+		{
+			"path": "../../python-data_structures"
+		},
+		{
+			"path": "../../python-exceptions"
+		},
+		{
+			"path": "../../python-hello_world"
+		},
+		{
+			"path": "../../python-if_else_loops_functions"
+		},
+		{
+			"path": "../../python-import_modules"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../python-more_classes"
+		},
+		{
+			"path": "../../python-more_data_structures"
+		},
+		{
+			"path": "../../python-test_driven_development"
+		}
+	]
+}
