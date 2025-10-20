@@ -1,2 +1,2 @@
--- list the  studnets ordered by their score
-SELECT score, name from second_table ORDER BY SCORE DESC;
+-- Script that lists all records of the table second_table ordered by score
+SELECT score, name FROM second_table ORDER BY score DESC;
