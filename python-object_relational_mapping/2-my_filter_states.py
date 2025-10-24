@@ -1,22 +1,32 @@
 #!/usr/bin/python3
-"""Takes in an argument and displays all values in the states table
-where name matches the argument"""
+"""
+1-filter_states
+that lists all states from the
+database hbtn_0e_0_usa
+where name starts with 'n'
+and is ordered by id (ascending)
+"""
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
-    db = MySQLdb.connect(
+    db_connection = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-                   .format(sys.argv[4]))
+    name_search = sys.argv[4]
+    cursor = db_connection.cursor()
+    query = (
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id"
+        .format(name_search))
+    cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
     cursor.close()
-    db.close()
+    db_connection.close()
+    
