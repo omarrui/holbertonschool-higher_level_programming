@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Takes in an argument and displays all values in the states table where name matches the argument (SQL injection safe)"""
+"""Takes in the name of a state as an argument and lists all cities of that state"""
 import MySQLdb
 import sys
 
@@ -12,9 +12,11 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (sys.argv[4],))
+    cursor.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC", (sys.argv[4],))
     rows = cursor.fetchall()
+    cities = []
     for row in rows:
-        print(row)
+        cities.append(row[0])
+    print(", ".join(cities))
     cursor.close()
     db.close()
