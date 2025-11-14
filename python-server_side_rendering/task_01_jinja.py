@@ -15,4 +15,4 @@ def contact():
    return render_template('contact.html')
 
 if __name__ == '__main__':
-   app.run(debug=True, port=5001)  # Changed from 5000 to 5001 coz i have an issue with that port
+   app.run(debug=True, port=5000)
